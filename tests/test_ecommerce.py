@@ -14,7 +14,8 @@ class EcommerceTestCase(unittest.TestCase):
         self.driver.implicitly_wait(15)
 
     def tearDown(self) -> None:
-        self.driver.quit()
+        self.driver.implicitly_wait(3)
+        self.driver.close()
 
 
 if __name__ == '__main__':
