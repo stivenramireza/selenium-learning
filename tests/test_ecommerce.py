@@ -5,7 +5,7 @@ from selenium import webdriver
 from src.secrets import DRIVER_PATH
 
 
-class EcommerceTests(unittest.TestCase):
+class EcommerceTest(unittest.TestCase):
     def setUp(self) -> None:
         self.driver = webdriver.Chrome(executable_path=DRIVER_PATH)
         self.driver.implicitly_wait(10)

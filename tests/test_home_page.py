@@ -1,7 +1,7 @@
-from tests.test_ecommerce import EcommerceTests
+from tests.test_ecommerce import EcommerceTest
 
 
-class HomePageTests(EcommerceTests):
+class HomePageTest(EcommerceTest):
     def test_search_text_field(self) -> None:
         search_field = self.driver.find_element_by_id('search')
 
