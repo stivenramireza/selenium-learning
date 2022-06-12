@@ -1,7 +1,7 @@
-from tests.test_ecommerce import EcommerceTest
+from tests.test_ecommerce import EcommerceTestCase
 
 
-class SearchTest(EcommerceTest):
+class SearchTestCase(EcommerceTestCase):
     def test_search_tee(self) -> None:
         search_field = self.driver.find_element_by_name('q')
         search_field.clear()

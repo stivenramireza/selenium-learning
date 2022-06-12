@@ -1,10 +1,10 @@
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.by import By
 
-from tests.test_ecommerce import EcommerceTest
+from tests.test_ecommerce import EcommerceTestCase
 
 
-class AssertionsTest(EcommerceTest):
+class AssertionsTestCase(EcommerceTestCase):
     def is_element_present(self, how: str, what: str) -> None:
         try:
             self.driver.find_element(by=how, value=what)
