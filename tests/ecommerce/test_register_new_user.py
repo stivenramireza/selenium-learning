@@ -1,5 +1,4 @@
-from click import confirm
-from tests.test_ecommerce import EcommerceTestCase
+from tests.ecommerce.test_ecommerce import EcommerceTestCase
 
 
 class RegisterNewUserTestCase(EcommerceTestCase):

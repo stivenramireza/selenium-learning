@@ -2,7 +2,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-from tests.test_ecommerce import EcommerceTestCase
+from tests.ecommerce.test_ecommerce import EcommerceTestCase
 
 
 class ExplicitWaitTestCase(EcommerceTestCase):

@@ -1,7 +1,7 @@
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.by import By
 
-from tests.test_ecommerce import EcommerceTestCase
+from tests.ecommerce.test_ecommerce import EcommerceTestCase
 
 
 class AssertionsTestCase(EcommerceTestCase):

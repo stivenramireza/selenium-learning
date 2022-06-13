@@ -1,6 +1,6 @@
 from selenium.webdriver.support.ui import Select
 
-from tests.test_ecommerce import EcommerceTestCase
+from tests.ecommerce.test_ecommerce import EcommerceTestCase
 
 
 class LanguageOptionsTestCase(EcommerceTestCase):
