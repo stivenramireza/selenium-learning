@@ -16,12 +16,3 @@ class EcommerceTestCase(unittest.TestCase):
     def tearDown(self) -> None:
         self.driver.implicitly_wait(3)
         self.driver.close()
-
-
-if __name__ == '__main__':
-    unittest.main(
-        verbosity=2,
-        testRunner=HTMLTestRunner(
-            output='reports', report_name='ecommerce-report'
-        ),
-    )
