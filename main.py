@@ -8,6 +8,7 @@ from tests.the_internet.test_add_remove_elements import (
     AddRemoveElementsTestCase,
 )
 from tests.the_internet.test_dynamic_elements import DynamicElementsTestCase
+from tests.the_internet.test_dynamic_controls import DynamicControlsTestCase
 
 
 def run_ecommerce_tests() -> None:
@@ -31,9 +32,16 @@ def run_the_internet_tests() -> None:
     dynamic_elements_test_case = TestLoader().loadTestsFromTestCase(
         DynamicElementsTestCase
     )
+    dynamic_controls_test_case = TestLoader().loadTestsFromTestCase(
+        DynamicControlsTestCase
+    )
 
     smoke_test = TestSuite(
-        [add_remove_elements_test_case, dynamic_elements_test_case]
+        [
+            # add_remove_elements_test_case,
+            # dynamic_elements_test_case,
+            dynamic_controls_test_case,
+        ]
     )
 
     kwargs = {'output': 'the-internet-report'}
