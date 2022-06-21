@@ -9,6 +9,7 @@ from tests.the_internet.test_add_remove_elements import (
 )
 from tests.the_internet.test_dynamic_elements import DynamicElementsTestCase
 from tests.the_internet.test_dynamic_controls import DynamicControlsTestCase
+from tests.the_internet.test_typos import TyposTestCase
 
 
 def run_ecommerce_tests() -> None:
@@ -35,12 +36,14 @@ def run_the_internet_tests() -> None:
     dynamic_controls_test_case = TestLoader().loadTestsFromTestCase(
         DynamicControlsTestCase
     )
+    typos_test_case = TestLoader().loadTestsFromTestCase(TyposTestCase)
 
     smoke_test = TestSuite(
         [
             # add_remove_elements_test_case,
             # dynamic_elements_test_case,
-            dynamic_controls_test_case,
+            # dynamic_controls_test_case,
+            typos_test_case
         ]
     )
 
