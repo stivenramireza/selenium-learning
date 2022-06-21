@@ -3,6 +3,8 @@ from pyunitreport import HTMLTestRunner
 
 from tests.ecommerce.test_assertions import AssertionsTestCase
 from tests.ecommerce.test_search import SearchTestCase
+from tests.ecommerce.test_search_ddt import SearchDDTTestCase
+from tests.ecommerce.test_search_csv_ddt import SearchCSVDDTTestCase
 
 from tests.the_internet.test_add_remove_elements import (
     AddRemoveElementsTestCase,
@@ -18,10 +20,14 @@ def run_ecommerce_tests() -> None:
         AssertionsTestCase
     )
     search_test_case = TestLoader().loadTestsFromTestCase(SearchTestCase)
+    search_ddt_test_case = TestLoader().loadTestsFromTestCase(SearchDDTTestCase)
+    search_csv_ddt_test_case = TestLoader().loadTestsFromTestCase(
+        SearchCSVDDTTestCase
+    )
 
-    smoke_test = TestSuite([assertions_test_case, search_test_case])
+    smoke_test = TestSuite([search_csv_ddt_test_case])
 
-    kwargs = {'output': 'smoke-report'}
+    kwargs = {'output': 'ecommerce-report'}
 
     runner = HTMLTestRunner(**kwargs)
     runner.run(smoke_test)
@@ -42,11 +48,11 @@ def run_the_internet_tests() -> None:
 
     smoke_test = TestSuite(
         [
-            # add_remove_elements_test_case,
-            # dynamic_elements_test_case,
-            # dynamic_controls_test_case,
-            # typos_test_case,
-            tables_test_case
+            add_remove_elements_test_case,
+            dynamic_elements_test_case,
+            dynamic_controls_test_case,
+            typos_test_case,
+            tables_test_case,
         ]
     )
 
@@ -58,10 +64,10 @@ def run_the_internet_tests() -> None:
 
 def main() -> None:
     ##Ecommerce tests
-    # run_ecommerce_tests()
+    run_ecommerce_tests()
 
     # The Internet tests
-    run_the_internet_tests()
+    # run_the_internet_tests()
 
 
 if __name__ == '__main__':
